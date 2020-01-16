@@ -15,5 +15,14 @@
     <Compile Update="Views\Conversion.xaml.cs">
       <DependentUpon>Conversion.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\RecipeDetailPage.xaml.cs">
+      <DependentUpon>RecipeDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\RecipePage.xaml.cs">
+      <DependentUpon>RecipePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\NewRecipePage.xaml.cs">
+      <DependentUpon>NewRecipePage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>
