@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Conversions.Views.AboutPage"
+             xmlns:vm="clr-namespace:Conversions.ViewModels"
+             Title="Conversion">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="LightTextColor">#999999</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout Grid.Row="1">
+            <Picker Title="Choose To Convert Volume or Mass" x:Name="ConversionType" SelectedIndexChanged="ConversionType_SelectedIndexChanged"/>
+            <Label Text="Enter First Unit to Convert"/>
+            <Picker Title="Pick Your Base Unit To Convert" x:Name="PickUnitOne"/>
+            <Entry x:Name="UnitOne" x:DataType="x:Double" Placeholder="Enter in Your First Unit Value" Keyboard="Numeric"/>
+            <Label Text="Enter Second Unit to Convert"/>
+            <Picker Title="Pick The Unit You Want To Convert To" x:Name="PickUnitTwo"/>
+            <Entry x:Name="UnitTwo" x:DataType="x:Double" Placeholder="The Converted Value Is Outputted here" IsEnabled="False" FontAttributes="Bold"/>
+            <Button x:Name="btnConvert" Text="Convert" Clicked="btnConvert_Clicked" />
+        </StackLayout>
+    </Grid>
+    
+</ContentPage>
