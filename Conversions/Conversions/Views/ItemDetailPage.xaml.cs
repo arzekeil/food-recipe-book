@@ -29,14 +29,6 @@ namespace Conversions.Views
         public ItemDetailPage()
         {
             InitializeComponent();
-
-            //var item = new Item
-            //{
-            //    Text = "Item 1",
-            //    Description = "This is a description"
-            //};
-
-            //viewModel = new ItemDetailViewModel(item);
             BindingContext = viewModel;
         }
     }
