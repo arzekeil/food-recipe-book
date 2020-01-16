@@ -6,8 +6,8 @@ namespace Conversions.ViewModels
 {
     public class ItemDetailViewModel : BaseViewModel
     {
-        public Item Item { get; set; }
-        public ItemDetailViewModel(Item item = null)
+        public Recipe Item { get; set; }
+        public ItemDetailViewModel(Recipe item = null)
         {
             Title = item.Name;
             Item = item;

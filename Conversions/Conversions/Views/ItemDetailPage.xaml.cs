@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using SQLite;
 
 using Conversions.Models;
 using Conversions.ViewModels;

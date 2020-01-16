@@ -6,29 +6,29 @@ using Conversions.Models;
 
 namespace Conversions.Services
 {
-    public class MockDataStore : IDataStore<Item>
+    public class MockDataStore : IDataStore<Recipe>
     {
-        readonly List<Item> items;
+        readonly List<Recipe> items;
 
         public MockDataStore()
         {
-            items = new List<Item>()
+            items = new List<Recipe>()
             {
-                new Item { Name = "Recipe One", Description="Recipe One Description" },
-                new Item { Name = "Recipe Two", Description="Recipe Two Description" }
+                new Recipe { Name = "Recipe One", Description="Recipe One Description" },
+                new Recipe { Name = "Recipe Two", Description="Recipe Two Description" }
             };
         }
 
-        public async Task<bool> AddItemAsync(Item item)
+        public async Task<bool> AddItemAsync(Recipe item)
         {
             items.Add(item);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> UpdateItemAsync(Item item)
+        public async Task<bool> UpdateItemAsync(Recipe item)
         {
-            var oldItem = items.Where((Item arg) => arg.Name == item.Name).FirstOrDefault();
+            var oldItem = items.Where((Recipe arg) => arg.Name == item.Name).FirstOrDefault();
             items.Remove(oldItem);
             items.Add(item);
 
@@ -37,18 +37,18 @@ namespace Conversions.Services
 
         public async Task<bool> DeleteItemAsync(string id)
         {
-            var oldItem = items.Where((Item arg) => arg.Name == id).FirstOrDefault();
+            var oldItem = items.Where((Recipe arg) => arg.Name == id).FirstOrDefault();
             items.Remove(oldItem);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<Item> GetItemAsync(string id)
+        public async Task<Recipe> GetItemAsync(string id)
         {
             return await Task.FromResult(items.FirstOrDefault(s => s.Name == id));
         }
 
-        public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<Recipe>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(items);
         }

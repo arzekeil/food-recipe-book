@@ -12,18 +12,18 @@ namespace Conversions.ViewModels
 {
     public class ItemsViewModel : BaseViewModel
     {
-        public ObservableCollection<Item> Items { get; set; }
+        public ObservableCollection<Recipe> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
 
         public ItemsViewModel()
         {
             Title = "Recipe";
-            Items = new ObservableCollection<Item>();
+            Items = new ObservableCollection<Recipe>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            MessagingCenter.Subscribe<NewItemPage, Item>(this, "Recipe Added", async (obj, item) =>
+            MessagingCenter.Subscribe<NewItemPage, Recipe>(this, "Recipe Added", async (obj, item) =>
             {
-                var newItem = item as Item;
+                var newItem = item as Recipe;
                 Items.Add(newItem);
                 await DataStore.AddItemAsync(newItem);
             });

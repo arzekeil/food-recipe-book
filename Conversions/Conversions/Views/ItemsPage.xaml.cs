@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using SQLite;
 
 using Conversions.Models;
 using Conversions.Views;
@@ -29,7 +30,7 @@ namespace Conversions.Views
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
-            var item = args.SelectedItem as Item;
+            var item = args.SelectedItem as Recipe;
             if (item == null)
                 return;
 
@@ -47,7 +48,7 @@ namespace Conversions.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
+            
             if (viewModel.Items.Count == 0)
                 viewModel.LoadItemsCommand.Execute(null);
         }

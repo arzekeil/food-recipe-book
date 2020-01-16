@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using SQLite;
 
 using Conversions.Models;
 
@@ -13,7 +14,7 @@ namespace Conversions.Views
     [DesignTimeVisible(false)]
     public partial class NewItemPage : ContentPage
     {
-        public Item Item { get; set; }
+        public Recipe Item { get; set; }
 
         public NewItemPage()
         {
@@ -22,7 +23,7 @@ namespace Conversions.Views
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            Item = new Item
+            Item = new Recipe
             {
                 Name = NameEntry.Text,
                 Ingredients = IngredientsEditor.Text,
@@ -30,7 +31,13 @@ namespace Conversions.Views
                 Description = DescriptionEditor.Text
             };
 
-            MessagingCenter.Send(this, "Recipe Added" , Item);
+            using (SQLiteConnection Connection = new SQLiteConnection(App.FilePath))
+            {
+                Connection.CreateTable<Recipe>();
+                Connection.Insert(Item);
+            }
+
+                MessagingCenter.Send(this, "Recipe Added", Item);
             await Navigation.PopModalAsync();
         }
 
