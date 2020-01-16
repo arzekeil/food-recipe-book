@@ -4,10 +4,10 @@ using Conversions.Models;
 
 namespace Conversions.ViewModels
 {
-    public class ItemDetailViewModel : BaseViewModel
+    public class RecipeDetailViewModel : BaseViewModel
     {
         public Recipe Item { get; set; }
-        public ItemDetailViewModel(Recipe item = null)
+        public RecipeDetailViewModel(Recipe item = null)
         {
             Title = item.Name;
             Item = item;

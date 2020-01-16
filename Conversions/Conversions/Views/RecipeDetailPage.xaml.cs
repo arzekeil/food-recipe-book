@@ -14,9 +14,9 @@ namespace Conversions.Views
     [DesignTimeVisible(false)]
     public partial class ItemDetailPage : ContentPage
     {
-        ItemDetailViewModel viewModel;
+        RecipeDetailViewModel viewModel;
         
-        public ItemDetailPage(ItemDetailViewModel viewModel)
+        public ItemDetailPage(RecipeDetailViewModel viewModel)
         {
             InitializeComponent();
             NameEntry.Text = viewModel.Item.Name;

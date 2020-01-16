@@ -10,12 +10,12 @@ using Conversions.Views;
 
 namespace Conversions.ViewModels
 {
-    public class ItemsViewModel : BaseViewModel
+    public class RecipeViewModel : BaseViewModel
     {
         public ObservableCollection<Recipe> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
 
-        public ItemsViewModel()
+        public RecipeViewModel()
         {
             Title = "Recipe";
             Items = new ObservableCollection<Recipe>();
