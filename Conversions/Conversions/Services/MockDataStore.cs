@@ -14,8 +14,8 @@ namespace Conversions.Services
         {
             items = new List<Item>()
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Recipe One", Description="Recipe One Description" },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Recipe Two", Description="Recipe Two Description" }
+                new Item { Name = "Recipe One", Description="Recipe One Description" },
+                new Item { Name = "Recipe Two", Description="Recipe Two Description" }
             };
         }
 
@@ -28,7 +28,7 @@ namespace Conversions.Services
 
         public async Task<bool> UpdateItemAsync(Item item)
         {
-            var oldItem = items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
+            var oldItem = items.Where((Item arg) => arg.Name == item.Name).FirstOrDefault();
             items.Remove(oldItem);
             items.Add(item);
 
@@ -37,7 +37,7 @@ namespace Conversions.Services
 
         public async Task<bool> DeleteItemAsync(string id)
         {
-            var oldItem = items.Where((Item arg) => arg.Id == id).FirstOrDefault();
+            var oldItem = items.Where((Item arg) => arg.Name == id).FirstOrDefault();
             items.Remove(oldItem);
 
             return await Task.FromResult(true);
@@ -45,7 +45,7 @@ namespace Conversions.Services
 
         public async Task<Item> GetItemAsync(string id)
         {
-            return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
+            return await Task.FromResult(items.FirstOrDefault(s => s.Name == id));
         }
 
         public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)

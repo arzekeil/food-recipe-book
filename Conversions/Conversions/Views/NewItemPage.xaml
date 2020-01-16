@@ -5,20 +5,27 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Conversions.Views.NewItemPage"
-             Title="New Item">
+             Title="New Recipe">
     
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
         <ToolbarItem Text="Save" Clicked="Save_Clicked" />
     </ContentPage.ToolbarItems>
-    
+
     <ContentPage.Content>
         <StackLayout Spacing="20" Padding="15">
-            <Label Text="Text" FontSize="Medium" />
-            <Entry Text="{Binding Item.Text}" d:Text="Item name" FontSize="Small" />
+            <Label Text="Recipe" FontSize="Medium" />
+            <Entry x:Name="NameEntry" Placeholder="Enter Recipe Name" FontSize="Small" />
+            
+            <Label Text="Ingredients" FontSize="Medium"/>
+            <Editor x:Name="IngredientsEditor" Placeholder="Enter Ingredients For The Recipe" FontSize="Small" VerticalOptions="FillAndExpand"/>
+            
+            <Label Text="Instructions" FontSize="Medium" />
+            <Editor x:Name="InstructionsEditor" Placeholder="Enter Instructions for the Recipe" FontSize="Small" VerticalOptions="FillAndExpand"/>
+            
             <Label Text="Description" FontSize="Medium" />
-            <Editor Text="{Binding Item.Description}" d:Text="Item description" FontSize="Small" Margin="0" />
+            <Editor x:Name="DescriptionEditor" Placeholder="Enter Description for the Recipe" FontSize="Small" VerticalOptions="FillAndExpand"/>
+            
         </StackLayout>
     </ContentPage.Content>
-    
 </ContentPage>

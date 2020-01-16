@@ -21,7 +21,7 @@ namespace Conversions.ViewModels
             Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
+            MessagingCenter.Subscribe<NewItemPage, Item>(this, "Recipe Added", async (obj, item) =>
             {
                 var newItem = item as Item;
                 Items.Add(newItem);

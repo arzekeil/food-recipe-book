@@ -18,19 +18,19 @@ namespace Conversions.Views
         public NewItemPage()
         {
             InitializeComponent();
-
-            Item = new Item
-            {
-                Text = "Item name",
-                Description = "This is an item description."
-            };
-
-            BindingContext = this;
         }
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "AddItem", Item);
+            Item = new Item
+            {
+                Name = NameEntry.Text,
+                Ingredients = IngredientsEditor.Text,
+                Instructions = InstructionsEditor.Text,
+                Description = DescriptionEditor.Text
+            };
+
+            MessagingCenter.Send(this, "Recipe Added" , Item);
             await Navigation.PopModalAsync();
         }
 

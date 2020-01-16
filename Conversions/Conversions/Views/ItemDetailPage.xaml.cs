@@ -14,11 +14,15 @@ namespace Conversions.Views
     public partial class ItemDetailPage : ContentPage
     {
         ItemDetailViewModel viewModel;
-
+        
         public ItemDetailPage(ItemDetailViewModel viewModel)
         {
             InitializeComponent();
-
+            NameEntry.Text = viewModel.Item.Name;
+            InstructionsEditor.Text = viewModel.Item.Instructions;
+            IngredientsEditor.Text = viewModel.Item.Ingredients;
+            DescriptionEditor.Text = viewModel.Item.Description;
+            
             BindingContext = this.viewModel = viewModel;
         }
 
@@ -26,13 +30,13 @@ namespace Conversions.Views
         {
             InitializeComponent();
 
-            var item = new Item
-            {
-                Text = "Item 1",
-                Description = "This is an item description."
-            };
+            //var item = new Item
+            //{
+            //    Text = "Item 1",
+            //    Description = "This is a description"
+            //};
 
-            viewModel = new ItemDetailViewModel(item);
+            //viewModel = new ItemDetailViewModel(item);
             BindingContext = viewModel;
         }
     }
