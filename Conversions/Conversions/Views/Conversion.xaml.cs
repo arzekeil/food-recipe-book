@@ -73,7 +73,7 @@ namespace Conversions.Views
                     case "tablespoon":
                         Output = Input * 0.333333;
                         break;
-                    case "fuild ounce":
+                    case "fluid ounce":
                         Output = Input * 0.166667;
                         break;
                     case "cup":
@@ -112,7 +112,7 @@ namespace Conversions.Views
                     case "tablespoon":
                         Output = Input;
                         break;
-                    case "fuild ounce":
+                    case "fluid ounce":
                         Output = Input * 0.5;
                         break;
                     case "cup":
@@ -133,7 +133,7 @@ namespace Conversions.Views
                 }
             }
             //
-            else if (UnitOne == "fuild ounce")
+            else if (UnitOne == "fluid ounce")
             {
                 switch (UnitTwo)
                 {
@@ -151,7 +151,7 @@ namespace Conversions.Views
                     case "tablespoon":
                         Output = Input * 2;
                         break;
-                    case "fuild ounce":
+                    case "fluid ounce":
                         Output = Input;
                         break;
                     case "cup":
@@ -190,7 +190,7 @@ namespace Conversions.Views
                     case "tablespoon":
                         Output = Input * 16.2307;
                         break;
-                    case "fuild ounce":
+                    case "fluid ounce":
                         Output = Input * 8.11537;
                         break;
                     case "cup":
@@ -229,7 +229,7 @@ namespace Conversions.Views
                     case "tablespoon":
                         Output = Input * 32;
                         break;
-                    case "fuild ounce":
+                    case "fluid ounce":
                         Output = Input * 16;
                         break;
                     case "cup":
@@ -268,7 +268,7 @@ namespace Conversions.Views
                     case "tablespoon":
                         Output = Input * 64;
                         break;
-                    case "fuild ounce":
+                    case "fluid ounce":
                         Output = Input * 32;
                         break;
                     case "cup":
@@ -307,7 +307,7 @@ namespace Conversions.Views
                     case "tablespoon":
                         Output = Input * 0.067628;
                         break;
-                    case "fuild ounce":
+                    case "fluid ounce":
                         Output = Input * 0.033814;
                         break;
                     case "cup":
@@ -346,7 +346,7 @@ namespace Conversions.Views
                     case "tablespoon":
                         Output = Input * 67.628;
                         break;
-                    case "fuild ounce":
+                    case "fluid ounce":
                         Output = Input * 33.814;
                         break;
                     case "cup":

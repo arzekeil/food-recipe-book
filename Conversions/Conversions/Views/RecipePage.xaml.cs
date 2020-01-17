@@ -48,9 +48,15 @@ namespace Conversions.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            
+
             if (viewModel.Items.Count == 0)
                 viewModel.LoadItemsCommand.Execute(null);
+
+            using (SQLiteConnection Connection = new SQLiteConnection(App.FilePath))
+            {
+                var Recipes = Connection.Table<Recipe>().ToList();
+                ItemsListView.ItemsSource = Recipes;
+            }
         }
     }
 }
