@@ -33,7 +33,6 @@ namespace Conversions.Views
 
             using (SQLiteConnection Connection = new SQLiteConnection(App.FilePath))
             {
-                Connection.CreateTable<Recipe>();
                 Connection.Insert(Item);
             }
 

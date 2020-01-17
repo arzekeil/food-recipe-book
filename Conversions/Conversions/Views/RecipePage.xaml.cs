@@ -54,6 +54,7 @@ namespace Conversions.Views
 
             using (SQLiteConnection Connection = new SQLiteConnection(App.FilePath))
             {
+                Connection.CreateTable<Recipe>();
                 var Recipes = Connection.Table<Recipe>().ToList();
                 ItemsListView.ItemsSource = Recipes;
             }
