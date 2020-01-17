@@ -7,6 +7,11 @@
              x:Class="Conversions.Views.ItemDetailPage"
              Title="{Binding Title}">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Delete" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
     <StackLayout Spacing="20" Padding="15">
         <Label Text="Recipe" FontSize="Medium" />
         <Entry x:Name="NameEntry" Placeholder="Enter Recipe Name" FontSize="Small" />
@@ -20,5 +25,5 @@
         <Label Text="Description" FontSize="Medium" />
         <Editor x:Name="DescriptionEditor" Placeholder="Enter Description for the Recipe" FontSize="Small" VerticalOptions="FillAndExpand"/>
     </StackLayout>
-    
+    </ContentPage.Content>
 </ContentPage>

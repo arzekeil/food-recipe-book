@@ -33,7 +33,13 @@ namespace Conversions.Views
             BindingContext = viewModel;
         }
 
-
-
+        private async void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            using (SQLiteConnection Connection = new SQLiteConnection(App.FilePath))
+            {
+                Connection.Delete<Recipe>(viewModel.Item.RecipeID);
+            }
+            await Navigation.PopAsync();
+        }
     }
 }
