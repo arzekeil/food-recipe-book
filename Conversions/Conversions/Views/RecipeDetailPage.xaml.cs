@@ -32,5 +32,8 @@ namespace Conversions.Views
             InitializeComponent();
             BindingContext = viewModel;
         }
+
+
+
     }
 }
