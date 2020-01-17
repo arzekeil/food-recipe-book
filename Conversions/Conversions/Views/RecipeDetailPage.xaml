@@ -12,18 +12,20 @@
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-    <StackLayout Spacing="20" Padding="15">
-        <Label Text="Recipe" FontSize="Medium" />
-        <Entry x:Name="NameEntry" Placeholder="Enter Recipe Name" FontSize="Small" />
+        <ScrollView HeightRequest="1000">
+            <StackLayout Spacing="20" Padding="15">
+                <Label Text="Recipe" FontSize="Medium" />
+                <Entry x:Name="NameEntry" Placeholder="Enter Recipe Name" FontSize="Small" />
 
-        <Label Text="Ingredients" FontSize="Medium"/>
-        <Editor x:Name="IngredientsEditor" Placeholder="Enter Ingredients For The Recipe" FontSize="Small" VerticalOptions="FillAndExpand"/>
+                <Label Text="Ingredients" FontSize="Medium"/>
+                <Editor x:Name="IngredientsEditor" Placeholder="Enter Ingredients For The Recipe" FontSize="Small" VerticalOptions="FillAndExpand"/>
 
-        <Label Text="Instructions" FontSize="Medium" />
-        <Editor x:Name="InstructionsEditor" Placeholder="Enter Instructions for the Recipe" FontSize="Small" VerticalOptions="FillAndExpand"/>
+                <Label Text="Instructions" FontSize="Medium" />
+                <Editor x:Name="InstructionsEditor" Placeholder="Enter Instructions for the Recipe" FontSize="Small" VerticalOptions="FillAndExpand"/>
 
-        <Label Text="Description" FontSize="Medium" />
-        <Editor x:Name="DescriptionEditor" Placeholder="Enter Description for the Recipe" FontSize="Small" VerticalOptions="FillAndExpand"/>
-    </StackLayout>
+                <Label Text="Description" FontSize="Medium" />
+                <Editor x:Name="DescriptionEditor" Placeholder="Enter Description for the Recipe" FontSize="Small" VerticalOptions="FillAndExpand"/>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
